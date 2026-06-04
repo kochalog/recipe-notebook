@@ -473,6 +473,41 @@ th {
     align-self: flex-end;
   }
 
+  .recipe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .recipe-card {
+    gap: 9px;
+    min-height: 142px;
+    padding: 12px;
+  }
+
+  .recipe-card__category {
+    font-size: 11px;
+  }
+
+  .recipe-card h2 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .recipe-card__meta {
+    gap: 5px;
+  }
+
+  .chip {
+    max-width: 100%;
+    min-height: 23px;
+    border-radius: 7px;
+    font-size: 10px;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+    padding: 4px 6px;
+    white-space: normal;
+  }
+
   .recipe-sheet {
     margin-top: 12px;
     padding: 22px 18px;
