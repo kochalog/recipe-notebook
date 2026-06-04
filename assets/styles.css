@@ -41,20 +41,22 @@ a {
 }
 
 .site-hero {
-  background: #ebe4d2;
-  border-bottom: 1px solid rgba(121, 110, 84, 0.18);
+  background: var(--wash);
+  overflow: hidden;
 }
 
 .site-hero__inner {
   display: flex;
   justify-content: center;
-  padding: 22px 0;
+  width: 100%;
 }
 
 .site-hero__art {
   display: block;
-  width: min(100%, 640px);
-  height: auto;
+  width: 100%;
+  height: clamp(210px, 28vw, 320px);
+  object-fit: cover;
+  object-position: center;
 }
 
 h1,
@@ -464,8 +466,8 @@ th {
     width: min(100% - 24px, 920px);
   }
 
-  .site-hero__inner {
-    padding: 14px 0;
+  .site-hero__art {
+    height: auto;
   }
 
   .recipe-toolbar {
