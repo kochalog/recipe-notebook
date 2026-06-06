@@ -236,6 +236,7 @@ p {
 }
 
 .recipe-card__category {
+  align-self: start;
   justify-self: stretch;
   border-bottom: 2px solid color-mix(in srgb, var(--category-color) 55%, var(--paper));
   color: var(--category-color);
