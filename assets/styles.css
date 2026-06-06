@@ -100,10 +100,10 @@ p {
   align-items: center;
   gap: 8px;
   min-height: 40px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--category-color);
   border-radius: 999px;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--category-color);
+  color: #fff;
   cursor: pointer;
   font: inherit;
   font-size: 14px;
@@ -116,14 +116,12 @@ p {
 .category-filter__button:hover,
 .category-filter__button:focus-visible {
   border-color: var(--category-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--category-color) 16%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--category-color) 24%, transparent);
   outline: none;
 }
 
 .category-filter__button.is-active {
-  border-color: var(--category-color);
-  background: var(--category-color);
-  color: #fff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--category-color) 32%, transparent);
 }
 
 .category-filter__button[data-category-filter="弁当"] {
@@ -149,17 +147,12 @@ p {
 .category-filter__count {
   min-width: 24px;
   border-radius: 999px;
-  background: var(--mint);
-  color: var(--leaf-dark);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   font-size: 12px;
   line-height: 1;
   padding: 5px 7px;
   text-align: center;
-}
-
-.category-filter__button.is-active .category-filter__count {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
 }
 
 .recipe-toolbar {
@@ -293,7 +286,7 @@ p {
   background: var(--category-color);
   color: #fff;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 400;
   padding: 4px 9px;
 }
 
