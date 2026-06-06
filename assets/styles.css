@@ -236,23 +236,13 @@ p {
 }
 
 .recipe-card__category {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  justify-self: start;
+  justify-self: stretch;
+  border-bottom: 2px solid color-mix(in srgb, var(--category-color) 55%, var(--paper));
   color: var(--category-color);
   font-size: 13px;
   font-weight: 800;
   line-height: 1.2;
-}
-
-.recipe-card__category::before {
-  width: 3px;
-  height: 1.35em;
-  border-radius: 999px;
-  background: var(--category-color);
-  content: "";
-  flex: 0 0 auto;
+  padding-bottom: 7px;
 }
 
 .recipe-card[data-category="弁当"] {
