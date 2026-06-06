@@ -247,9 +247,9 @@ p {
 }
 
 .recipe-card__category::before {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 3px;
+  height: 1.35em;
+  border-radius: 999px;
   background: var(--category-color);
   content: "";
   flex: 0 0 auto;
