@@ -218,6 +218,7 @@ p {
 .recipe-card {
   --category-color: var(--category-main);
   display: grid;
+  align-content: start;
   gap: 12px;
   min-height: 160px;
   border: 1px solid var(--line);
@@ -276,7 +277,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin-top: auto;
 }
 
 .chip {
