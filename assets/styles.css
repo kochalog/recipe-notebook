@@ -214,26 +214,16 @@ p {
 
 .recipe-card {
   --category-color: var(--category-main);
-  position: relative;
   display: grid;
   gap: 12px;
   min-height: 160px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
-  overflow: hidden;
   padding: 18px;
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(54, 47, 35, 0.08);
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-}
-
-.recipe-card::before {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 4px;
-  background: var(--category-color);
-  content: "";
 }
 
 .recipe-card:hover {
@@ -243,14 +233,23 @@ p {
 }
 
 .recipe-card__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   justify-self: start;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--category-color) 13%, var(--paper));
   color: var(--category-color);
   font-size: 13px;
   font-weight: 800;
   line-height: 1.2;
-  padding: 5px 10px;
+}
+
+.recipe-card__category::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--category-color);
+  content: "";
+  flex: 0 0 auto;
 }
 
 .recipe-card[data-category="弁当"] {
@@ -291,8 +290,8 @@ p {
   align-items: center;
   min-height: 28px;
   border-radius: 999px;
-  background: var(--mint);
-  color: var(--leaf-dark);
+  background: var(--category-color);
+  color: #fff;
   font-size: 12px;
   font-weight: 800;
   padding: 4px 9px;
