@@ -284,8 +284,8 @@ p {
   align-items: center;
   min-height: 28px;
   border-radius: 999px;
-  background: var(--category-color);
-  color: #fff;
+  background: color-mix(in srgb, var(--category-color) 10%, var(--paper));
+  color: var(--category-color);
   font-size: 12px;
   font-weight: 400;
   padding: 4px 9px;
