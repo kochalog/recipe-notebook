@@ -10,6 +10,11 @@
   --mint: #edf4e8;
   --clay: #b16c4f;
   --saffron: #d5a33b;
+  --category-bento: #3f739d;
+  --category-staple: #a85824;
+  --category-main: var(--leaf-dark);
+  --category-side: #79629b;
+  --category-seasoning: #876215;
   --shadow: 0 18px 45px rgba(54, 47, 35, 0.12);
 }
 
@@ -90,6 +95,7 @@ p {
 }
 
 .category-filter__button {
+  --category-color: var(--leaf-dark);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -109,15 +115,35 @@ p {
 
 .category-filter__button:hover,
 .category-filter__button:focus-visible {
-  border-color: rgba(102, 136, 106, 0.55);
-  box-shadow: 0 0 0 3px rgba(102, 136, 106, 0.14);
+  border-color: var(--category-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--category-color) 16%, transparent);
   outline: none;
 }
 
 .category-filter__button.is-active {
-  border-color: var(--leaf-dark);
-  background: var(--leaf-dark);
+  border-color: var(--category-color);
+  background: var(--category-color);
   color: #fff;
+}
+
+.category-filter__button[data-category-filter="弁当"] {
+  --category-color: var(--category-bento);
+}
+
+.category-filter__button[data-category-filter="主食"] {
+  --category-color: var(--category-staple);
+}
+
+.category-filter__button[data-category-filter="主菜"] {
+  --category-color: var(--category-main);
+}
+
+.category-filter__button[data-category-filter="副菜"] {
+  --category-color: var(--category-side);
+}
+
+.category-filter__button[data-category-filter="調味料"] {
+  --category-color: var(--category-seasoning);
 }
 
 .category-filter__count {
@@ -187,10 +213,12 @@ p {
 }
 
 .recipe-card {
+  --category-color: var(--category-main);
   display: grid;
   gap: 12px;
   min-height: 160px;
   border: 1px solid var(--line);
+  border-top: 4px solid var(--category-color);
   border-radius: 8px;
   background: var(--paper);
   padding: 18px;
@@ -201,14 +229,39 @@ p {
 
 .recipe-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(102, 136, 106, 0.55);
+  border-color: var(--category-color);
   box-shadow: var(--shadow);
 }
 
 .recipe-card__category {
-  color: var(--leaf-dark);
+  justify-self: start;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--category-color) 13%, var(--paper));
+  color: var(--category-color);
   font-size: 13px;
   font-weight: 800;
+  line-height: 1.2;
+  padding: 5px 10px;
+}
+
+.recipe-card[data-category="弁当"] {
+  --category-color: var(--category-bento);
+}
+
+.recipe-card[data-category="主食"] {
+  --category-color: var(--category-staple);
+}
+
+.recipe-card[data-category="主菜"] {
+  --category-color: var(--category-main);
+}
+
+.recipe-card[data-category="副菜"] {
+  --category-color: var(--category-side);
+}
+
+.recipe-card[data-category="調味料"] {
+  --category-color: var(--category-seasoning);
 }
 
 .recipe-card h2 {
