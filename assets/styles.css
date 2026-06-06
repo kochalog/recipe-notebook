@@ -310,6 +310,30 @@ p {
   gap: 12px;
 }
 
+.recipe-page {
+  --category-color: var(--category-main);
+}
+
+.recipe-page[data-category="弁当"] {
+  --category-color: var(--category-bento);
+}
+
+.recipe-page[data-category="主食"] {
+  --category-color: var(--category-staple);
+}
+
+.recipe-page[data-category="主菜"] {
+  --category-color: var(--category-main);
+}
+
+.recipe-page[data-category="副菜"] {
+  --category-color: var(--category-side);
+}
+
+.recipe-page[data-category="調味料"] {
+  --category-color: var(--category-seasoning);
+}
+
 .back-link,
 .print-button {
   min-height: 40px;
@@ -341,7 +365,7 @@ p {
 .top-accent {
   height: 7px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--leaf), #aac39c 70%, var(--saffron));
+  background: linear-gradient(90deg, var(--category-color), color-mix(in srgb, var(--category-color) 35%, var(--paper)));
   margin-bottom: 20px;
 }
 
@@ -368,15 +392,15 @@ p {
   display: inline-flex;
   align-items: baseline;
   gap: 7px;
-  border: 1px solid #d8e3d0;
+  border: 1px solid color-mix(in srgb, var(--category-color) 28%, var(--paper));
   border-radius: 999px;
-  background: #fbfcf8;
+  background: color-mix(in srgb, var(--category-color) 7%, var(--paper));
   padding: 5px 11px;
   line-height: 1.25;
 }
 
 .meta-label {
-  color: var(--leaf-dark);
+  color: var(--category-color);
   font-size: 12px;
   font-weight: 800;
 }
@@ -424,7 +448,7 @@ p {
   width: 7px;
   height: 22px;
   border-radius: 999px;
-  background: var(--leaf);
+  background: var(--category-color);
   flex: 0 0 auto;
 }
 
@@ -466,8 +490,8 @@ tr:last-child td {
 }
 
 th {
-  background: var(--mint);
-  color: var(--leaf-dark);
+  background: color-mix(in srgb, var(--category-color) 10%, var(--paper));
+  color: var(--category-color);
   font-weight: 800;
 }
 
