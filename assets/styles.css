@@ -214,17 +214,26 @@ p {
 
 .recipe-card {
   --category-color: var(--category-main);
+  position: relative;
   display: grid;
   gap: 12px;
   min-height: 160px;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--category-color);
   border-radius: 8px;
   background: var(--paper);
+  overflow: hidden;
   padding: 18px;
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(54, 47, 35, 0.08);
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.recipe-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--category-color);
+  content: "";
 }
 
 .recipe-card:hover {
